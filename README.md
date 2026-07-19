@@ -22,10 +22,13 @@ Small local models (e.g. Gemma) have weak or absent native tool-calling, so this
 ## Setup
 
 ```bash
+cd writer_critic
 pip install -r requirements.txt
 ```
 
 ## Usage
+
+All commands run from the `writer_critic/` directory.
 
 **Web UI** (recommended — streams each step live):
 ```bash
@@ -40,7 +43,7 @@ python main.py "Write a haiku about local LLMs" # custom task
 
 ## Configuration
 
-All settings live in `config.py`:
+All settings live in `writer_critic/config.py`:
 
 | Setting | Description |
 | --- | --- |
@@ -55,10 +58,10 @@ The Streamlit sidebar can override `QUALITY_THRESHOLD` and `MAX_REVISIONS` per r
 
 | File | Responsibility |
 | --- | --- |
-| `config.py` | Model tag and loop settings |
-| `graph.py` | State schema, writer/critic nodes, cyclic graph wiring |
-| `main.py` | CLI entry point |
-| `app.py` | Streamlit frontend (streams nodes as they run) |
+| `writer_critic/config.py` | Model tag and loop settings |
+| `writer_critic/graph.py` | State schema, writer/critic nodes, cyclic graph wiring |
+| `writer_critic/main.py` | CLI entry point |
+| `writer_critic/app.py` | Streamlit frontend (streams nodes as they run) |
 
 ## Concepts demonstrated
 
